@@ -1,0 +1,51 @@
+mkdir fileName
+git clone (HTTS)
+git clone https://token@github
+
+git status: to show if the folder is a git repository
+git init: initialize repo
+
+git add FileName
+git add . --> add all the files to 
+git commit (-m message)
+
+git log
+
+git remote -v  -> view the URL of the remote branch
+git remote add name https://url.git
+git remote add orgin https://url.git
+git remote rename <old> <new>
+git remote remove <name>
+
+git push -u origin main/master
+git branch -M main
+
+git fetch <remote> <branch>
+git fetch origingi <branch>
+
+
+…or create a new repository on the command line
+ echo "# LEARNGIT" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/daonguyen2019/LEARNGIT.git
+git push -u origin main
+
+…or push an existing repository from the command line
+ git remote add origin https://github.com/daonguyen2019/LEARNGIT.git
+git branch -M main
+git push -u origin main
+
+
+
+
+
+
+
+
+
+
+
+

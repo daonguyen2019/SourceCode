@@ -1,0 +1,74 @@
+-----check explain in SQL developer
+--writing test SQL with dual table
+
+
+--select coalesce(par1, par2, ...) --> return 1st not null obj
+--select NVL(expr,replacement string ) --> return replacement string for expr
+--select trim('' from ' whitespace   ') from dual;
+--LPAD(EXPRESSION, PADDED_LENGTH, PAD_CHARACTER) --> get the str with the same PADDED_LENGTH, drop character if it exceed
+--RPAD(EXPRESSION, PADDED_LENGTH, PAD_CHARACTER)
+--LEAST(exp1, expr2), GREATEST(expr1, expr2)
+
+--PIVOT
+--select * from 
+(select col1, col2 ..colN from table)
+PIVOT
+(aggfunc(colN) for colN in (list value))
+
+            select * from 
+            (select region_id, sub_region_id, population from eba_countries)
+            pivot
+            (sum(population) for region_id in (10,20,30))
+
+            select * from 
+            (select deptNo, Job, salary from Emp)
+            pivot
+            (sum(salary) for Job in ('list1','list2'))
+
+----WINDOW FRAME
+--unbounded preceding: unbounded preceding and current row
+--N preceding: N preceding and current row
+--current row: current row
+--N following: current row and N following
+--unbounded following: current row and unbounded following
+-- row for actual row, range for value of the row
+--DEFAULT IN WINDOW FRAME
+--if the ORDER BY is specified, frame is RANGE between unbouned preceding and current row
+--if the ORDER BY is NOT specified, the frame is ROWS between unbounded preceding and unbounded following
+--OVER(
+    PARTITION BY
+    ORDER BY 
+    WINDOW FRAME
+) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+
+
+df['colName'].dt.day_name()  #return Monday/Tuesday...
