@@ -10,23 +10,34 @@ sns.scatterplot(x= colName
                 , size = colName
                 , alpha = (0,1)/transparency
                 , style = colName
+                ,linewidth=0
                 )
 plt.savefig(name.jpg)
 
 #Distribution Plots
 sns.set(style = 'darkgrid')
 sns.displot(data=df
-            ,x='salary'
+            ,x=colName
             ,bins= 
             , kde = True
  )
 sns.kdeplot(
     data = 
     , x=''
-    , clip = []
-    , bw_adjust = 0.3
+    , clip = [] # like xlim
+    , bw_adjust = 0.3 #Increasing will make the curve smoother.
     , shade = True #fill in shape
 )
+
+#Histogram Plots
+sns.histplot(data=df
+             ,x='Years'
+             ,linewidth=2
+             ,edgecolor='black'
+             ,color='red'
+             ,bins=45
+             ,alpha=0.4)
+
 
 #Categorical Plots
    #countplot --> visualization of groupby
@@ -49,7 +60,7 @@ sns.kdeplot(
    plt.legend(bbox_to_anchor = (1.05,1) #set legend outside of the box)
 
 #Comparison Plots
-    sns.box_plot(
+    sns.boxplot(
             data =
             , y = colName
             , x = colName

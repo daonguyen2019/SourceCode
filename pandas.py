@@ -9,6 +9,20 @@ df['colName'].value_counts() #return count values
 1 in range(1,16) # return True
 pd.to_datetime() # convert to datetime from str template
 
+df.info() #show all columns and data type of these columns
+df.nsmallest(n, columns) #Return the first n rows ordered by columns in ascending order
+df.corr() #Compute pairwise correlation of columns, excluding NA/null values.
+
+round(df['col'],2) = df['col'].round()
+
+
+
+
+
+
+
+
+
 
 
 

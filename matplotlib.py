@@ -16,7 +16,11 @@ plt.xticks([list of bin in row])
 plt.yticks([list of bin in col],labels = [])
 plt.xlim()
 plt.ylim()
-plt.legend()
+plt.legend(bbox_to_anchor=(1.05, 1)
+           , loc=2
+           , borderaxespad=0.
+           ,title='FLAG_OWN_REALTY'
+          )
 plt.hist(data, label = , alpha = )
 ####-----------------------------------------------
 # LOG SCALE

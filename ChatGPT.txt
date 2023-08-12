@@ -1,0 +1,29 @@
+
+
+Components of a Prompt:
+	Instruction : directive for ChatGPT on action to perform
+		simple
+		complex
+	Primary Content: text to transform or process as per instructions
+		
+	Example: Sample response to generate similar ones
+	Cue: Any text or symbol to be used as a prefix in a response
+	Supporting Content: 
+	
+Action verbs:
+	Analyze
+	Define
+	Outline
+	Suggest
+	Arrange
+	Create 
+	Explain
+	Rephrase
+	Clarify
+	Differentiate
+	List
+	Rewrite
+	Combine
+	Discuss
+	Recommend
+	Summarize

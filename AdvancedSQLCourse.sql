@@ -14,6 +14,37 @@ SELECT * FROM
 ( SELECT COL_1, COL_2.. COL_N FROM TABLE) 
 PIVOT (AGG_FUNC(COL_N) FOR COL_N IN (LIST))
 
+WINDOW_FUNCTION
+	OVER(
+	PARTITION BY ...
+	ORDER BY ....
+	WINDOW_FRAME
+)
+unbounded preceding : unbounded preceding and current row
+N preceding : N preceding and current row
+current row: current row
+N following: current row and N following
+unbounded following: current row and unbounded following
+
+Range: 
+	_actual numerical value range : 20 - 1= 19
+	_range consider in the order clause
+	
+If Order by is specified, then the frame is RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+		--> Running total
+If Order by is NOT specified, then the frame is ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+
+ 
+
+
+
+
+
+
+
+
+
+
 
 
 
