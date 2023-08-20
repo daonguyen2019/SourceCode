@@ -19,13 +19,6 @@ mkdir fileName
 git clone (HTTS)
 git clone https://token@github
 
-
-
-
-
-
-
-
 git push -u origin main/master
 git branch -M main
 
