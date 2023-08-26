@@ -40,7 +40,7 @@ git push -u origin main
 git remote add origin https://github.com/daonguyen2019/SourceCode
 git branch -M main
 git push -u origin main
-
+git fetch -u origin main
 
 
 

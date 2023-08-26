@@ -1,1 +1,9 @@
 Gradien descent
+
+Polynomial Regression
+
+
+
+
+
+
