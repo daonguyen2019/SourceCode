@@ -6,7 +6,7 @@ nums = np.arrange(5)
     #Pyplot API
         plt.plot()
     #Object-Oriented
-     
+
 plt.figure(figsize=(2,6), dpi = )
 plt.style.available #check style available
 plt.style.use('fivethirtyeight')
@@ -59,7 +59,7 @@ axes.set_ylim()
 axes.set_xlabel()
 axes.set_ylabel()
 axes.set_title()
-    fig.subtitle()
+fig.subtitle()
 axes.legend(loc=(1.5,..)# legend out of the box)
 axes.axvline(x=0, ymin=0, ymax=1, **kwargs) 
 axes.axhline(y=0, xmin=0, xmax=1, **kwargs)

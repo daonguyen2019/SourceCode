@@ -1,5 +1,7 @@
 import pandas as pd
 
+pd.read_csv('../folder/file.csv') #get file from different current folder
+
 len(df)  #count number of rows
 df.isnull().sum().sort_values(ascending = False) # check missing data and list down the most missing data
 df.drop(colName, axis = 1) #drop columns
@@ -14,6 +16,9 @@ df.nsmallest(n, columns) #Return the first n rows ordered by columns in ascendin
 df.corr() #Compute pairwise correlation of columns, excluding NA/null values.
 
 round(df['col'],2) = df['col'].round()
+
+
+
 
 
 

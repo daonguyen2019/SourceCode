@@ -46,7 +46,7 @@ RMSE = np.sqrt(MSE)
 
 
 
-
+#Model deployment
 from joblib import dump, load
 dump(model,'model.joblib')
 loaded_model = load('model.joblib')
@@ -86,8 +86,60 @@ for d in range(1,10):
     poly_converter = PolynomialFeatures(degree=d, include_bias = False)
     poly_features = poly_converter.fit_transform(X)
     X_train, X_test, y_train, y_test = train_test_split(poly_features,y, test_size = , random_state = )
+    model=LinearRegression()
+    model.fit(X_train,y_train)
     
+    train_pred = model.predict(X_train)
+    test_pred = model.predict(X_test)
     
+    train_rmse = np.sqrt(mean_squared_error(y_train,train_pred))
+    test_rmse = np.sqrt(mean_squared_error(y_test,test_pred))
+    
+    train_rmse_errors.append(train_rmse)
+    test_rmse_errors.append(test_rmse)
+    
+from sklearn.linear_model import Ridge
+ridge_model = Ridge(alpha = 10)
+ridge_model.fit(X_train, y_train)
+test_predictions = ridge_model.predict(X_test)
+
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+MAE=mean_absolute_error(y_test,test_predictions)
+RMSE=np.sqrt(mean_squared_error(y_test,test_predictions))
+
+from sklearn.linear_model import RidgeCV (cross validation)
+ridge_cv_model = RidgeCV(alphas = (0.1,1,10), scoring = 'neg_mean_absolute_error')
+ridge_cv_model.fit(X_train, y_train)
+ridge_cv_model.alpha_
+ridge_cv_model.coef_
+
+from sklearn.metrics import SCORERS
+SCORERS.keys() #higher is betters : transform as deafult for scores
+#---> scoring = 'neg_mean_absolute_error')
+
+
+from sklearn.linear_model import LassoCV
+lasso_cv_model = LassoCV(eps = 0.001, n_alphas = 100, cv = 5, max_iter= 1000)
+lasso_cv_model.fit(X_train, y_train)
+lasso_cv_model.alpha_
+test_predictions = lasso_cv_model.predict(X_test)
+MAE = mean_absolute_error(y_test,test_predictions)
+RMSE = np.sqrt(mean_squared_error(y_test,test_predictions))
+
+from sklearn.linear_model import ElasticNetCV
+elastic_model = ElasticNetCV(l1_ratio = [],eps = , n_alphas = , max_iter=  )
+elastic_model.fit()
+elastic_model.l1_ratio_
+
+
+
+
+
+
+
+
+
+
 
 
 

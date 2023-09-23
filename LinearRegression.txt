@@ -3,6 +3,46 @@ Gradien descent
 Polynomial Regression
 
 
+Regularization--> solve few common model issues:
+	--> minimize model complexity
+	--> Penalize the loss function
+	--> Reduce model overfitting
+
+3 types of Regularization:
+--> L1 Regularization: LASSO regression
+	add a penalty equal to the absolute value of the magnitude of coefficients
+		-limit the size of coefficients
+		-sparse models where some coefs can become zero -- able to shrink coefficients to zero
+		
+--> L2 Regularization: Ridge regression
+	add a penalty equal to the square of the magnitude of coefficients
+		-all coefs are shrunk by the same factor
+		-Does not necessarily eliminate coefs
+	
+-->Combining L1 & L2: Elastic Net
+	with the addition of an alpha parameters deciding the ratio between them
+
+----L2 Regularization = Ridge Regression 
+	add a shrinkage penalty
+	Error = sum square residual (RSS) + lambda * squared (beta)
+	lambda determines how severe the penalty is ( from zero to infinity)
+	
+	
+	
+	
+	
+
+		
+
+
+
+
+
+
+
+
+
+	
 
 
 
