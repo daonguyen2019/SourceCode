@@ -1,0 +1,52 @@
+3 general approaches:
+_extract information
+	+1990-12-01 09:26:03
+		-year
+		-month
+		-weekday or weekend
+		-Mon:1, Tues:2,... Sun:7
+	+Text data:
+		-length of text
+		-number of times certain terms are mentioned
+_combine information
+	- interaction terms
+	- combined extracted information
+_transform information
+	- integer encoding
+	- one-hot encoding
+	
+Dealing with Ouliers:
+	-Definition of an Outliers
+		-Range and Limits
+			-InterQuartile Range (IQR)
+			-Standard Deviation
+			-Visualized or Domain Limit Value
+		-Percentage of Data
+
+Dealing with Missing data:
+	- threshold 1%: 
+		-below threshold: fillna()
+		-higher than threshold: 
+			-too high: drop column
+	- filling with mean value
+
+Dealing with categorical data:
+	- apply string for numerical data in case it is not the real numerical
+		
+			
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
