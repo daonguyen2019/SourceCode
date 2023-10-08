@@ -8,6 +8,9 @@ df = df.drop(colName, axis = 1) #drop columns
 df.sort_values('adr',ascending=False)
 df['colName'].value_counts() #return count  values 
 
+df['Target'] = df['Label'].map({'R':0,'M':1})
+
+
 1 in range(1,16) # return True
 pd.to_datetime() # convert to datetime from str template
 df.info() #show all columns and data type of these columns
@@ -25,11 +28,20 @@ df.groupby(colName1)[ColName2].mean()
 df[colName] = df.groupby(colName1)[ColName2].transform(lambda value: value.fillna(value.mean())) --> fill same value for all values missing
 df[col] = df[col].apply(str) --> apply string to convert numerical
 
-pd.get_dummies(Series, drop_first = True) --> return dummy variable for categorical data
+pd.get_dummies(Series, drop_first = True) --> return dummy variable for categorical data, add drop_first meaning drop the redundant                                                       encoding columns
 pd.select_dtypes(include = ['object']) --> select datatype for each columns
 pd.select_dtypes(exclude = ['object']) --> select datatype for each columns, exclude object --> numerical
 
 pd.concat([list df], axis = 1) --> 
+
+df.at[rowIndex, 'col'] = new value --> assign new value into a DataFrame
+
+
+
+
+
+
+
 
 
 

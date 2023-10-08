@@ -3,7 +3,7 @@
 #statsmodels
 
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = , random_state = )
+X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.1, random_state =101 )
 
 from sklearn.model_family import ModelAlgo
 mymodel = ModelAlgo(param1,param2)
@@ -131,25 +131,74 @@ elastic_model = ElasticNetCV(l1_ratio = [],eps = , n_alphas = , max_iter=  )
 elastic_model.fit()
 elastic_model.l1_ratio_
 
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaled_X_train = scaler.fit_transform(X_train) #only fit on train data
+scaled_X_test = scaler.transform(X_test)
+
+from sklearn.linear_model import LogisticRegression
+
+log_model = LogisticRegression()
+log_model.fit(scaled_X_train,y_train)
+log_model.coef_ 
+log_model.predict(scaled_X_test)
+log_model.predict_proba(scaled_X_test)
+
+from sklearn.metrics import accuracy_score, confusion_matrix,classification_report, plot_confusion_matrix
+
+confusion_matrix(y_test,y_pred)
+plot_confusion_matrix(log_model, scaled_X_test, y_test)
+print(classification_report(y_test,y_pred))
+
+#KNN alogrithm
+
+X = df.drop('Cancer Present', axis = 1)
+y = df['Cancer Present']
+X_train, X_test, y_train, y_test = train_test_split(X,y, test_size =0.3 , random_state = 42)
+scaler = StandardScaler()
+scaled_X_train = scaler.fit_transform(X_train)
+scaled_X_test = scaler.transform(X_test)
+
+from sklearn.neighbors import KNeighborsClassifier
+
+knn_model = KNeighborsClassifier(n_neighbors=1)
+knn_model.fit(scaled_X_train, y_train)
+y_pred = knn_model.predict(scaled_X_test)
+
+from sklearn.metrics import confusion_matrix, classification_report
+confusion_matrix(y_test, y_pred)
+print(classification_report(y_test, y_pred))
 
 
+#Pipeline procedure
 
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV
 
+scaler = StandardScaler()
+knn = KNeighborsClassifier()
+knn.get_params()
+operations = [('scaler',scaler),('knn',knn)]
 
+pipe = Pipeline(operations)
+k_values = list(range(1,20))
+	
 
+param_grid = {
+    'knn__n_neighbors':k_values
+#    ,'knn_metric'
+}
 
+full_cv_calssifier = GridSearchCV(pipe, param_grid, cv=5,scoring = 'accuracy')
+full_cv_calssifier.fit(X_train,y_train)
+full_cv_calssifier.best_estimator_.get_params()
+full_cv_classifier.cv_results_
 
+full_pred = full_cv_calssifier.predict(X_test)
+print(classification_report(y_test, full_pred))
+full_cv_calssifier.predict_proba(X_test)
 
-
-
-
-
-
-
-
-
-
-
+from sklearn
 
 
 

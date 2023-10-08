@@ -26,6 +26,127 @@ Regularization--> solve few common model issues:
 	add a shrinkage penalty
 	Error = sum square residual (RSS) + lambda * squared (beta)
 	lambda determines how severe the penalty is ( from zero to infinity)
+
+
+---------------------------------------------------------
+LOGISTIC Regression
+
+odds ratio:
+	-gambling often referred to in the sense of N to 1
+	-odds of an event defined as p/(1-p)
+	-log odds = Linear regression
+	
+likelihood is the product of probability = p1*(1-p1).....
+log of the likelihood = ln(p1)*ln(1-p)
+computer's gradient descent methods can only search for minimums --> cost function
+	log loss
+
+Metric for logistic regression
+-accuracy = (True positive + True Negative)/Total
+-recall: when it actually is a positive case, how often is it correct
+		 = TP/Total Actual positive (TP+FN)
+-predision: when prediction is positive, how often is it correct
+		 = TP/Total Predicted positive (TP+FP)
+-F1-Score = harmonic mean of precision and recall
+	F = 2*precision*recall/(precision + recall)
+-Receiver Operator Characteristic curve: 
+		-True positive rate vs False positive rate
+		-Change cut off leads to change the TP vs FP
+-Area under the curve (AUC): compare different models
+-Precision vs recall curves
+
+-------------------------------------------------------------------
+KNN - K nearest neighbors
+- simply assign a label to new data based on the distance between the old data and new data
+- k=1, k=3, K=3 --> Take the majority 
+- Tie considerations:
+	- always choose an odd K
+	- in case of tie --> reduce K by 1 until tie is broken
+	- randomly break tie
+	- choose nearest class point
+- how to choose best K value
+	- K value that minimize error = 1-accuracy
+	- two methods:
+		- Elbow method:
+				relationship between k-value and Error rate
+		- Cross validate a grid search of multiple K values
+-KNN Algorithm
+    - choose K values
+	- Sort feature vectors (N dimensional space) by distance metric
+	- choose class based on K nearest feature vectors
+-KNN Considerations:
+	- Distance metric:
+		-Minkowski
+		-Euclidean
+		-Manhattan
+		-Chebyshev
+	- Scaling for distance: Scaling is necessary for KNN
+
+-PipeLine
+
+
+Note: If your parameter grid is going inside a PipeLine, your parameter name needs to be specified in the following manner:*
+
+chosen_string_name + two underscores + parameter key name
+model_name + __ + parameter name
+knn_model + __ + n_neighbors
+knn_model__n_neighbors
+
+------------------------------------------------------------------------------
+Tree based method
+	- Decision Trees
+	- Random Forests
+	- Boosted Trees
+Decision tree: 
+	-Node splits are decided based on an infomration metric
+	-Ability to split data based on information from features
+	-node impurity
+CART intrpdices many concepts: 
+	-Cross validation of Trees
+	-Pruning Trees: 
+	-Surrogate Splits
+	-Vairable importance Score
+	-Search for Linear Splits
+Gini impurity
+    -the Gini impurity is a loss metric	
+	-Multiple features
+	-Continous Features:
+		- sort values
+		- use average between rows as value
+			- split value --> calculate Gini			
+		- choose lowest impurity split values
+	-Multi-categorical Features	
+		- calculate for each bin
+		- calculate for all combination
+Prevent overfitting: 
+	-add minimum gini impurity decrease
+	-mandate a max depth
+	
+
+
+
+
+
+
+
+
+
+
+
+		
+	
+
+
+
+
+		
+
+
+ 	
+		 
+	
+
+
 	
 	
 	
