@@ -200,6 +200,29 @@ full_cv_calssifier.predict_proba(X_test)
 
 from sklearn
 
+#--------------------------------
+#--Boosting
+from sklearn.ensemble import AdaBoostClassifier
+model = AdaBoostClassifier(n_estimators=1)
+model.fit(X_train,y_train)
+
+
+from sklearn.metrics import classification_report, plot_confusion_matrix, accuracy_score
+preditions = model.predict(X_test)
+print(classification_report(y_test,preditions))
+model.feature_importances_
+
+error_rates = []
+for n in range(1,96):
+    model = AdaBoostClassifier(n_estimators=n)
+    model.fit(X_train,y_train)
+    preds = model.predict(X_test)
+    err = 1-accuracy_score(y_test, preds)
+    error_rates.append(err)    
+
+plt.plot(range(1,96),error_rates)
+
+
 
 
 
